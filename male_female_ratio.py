@@ -18,8 +18,7 @@ from matplotlib.font_manager import FontProperties #顯示中文字型
 myFont=FontProperties(fname='msj.ttf')
 
 #Add sidebar to the app
-st.sidebar.markdown("台灣各大專院校學生人數統計分析")
-st.title("大專院校男女學生人數")
+st.sidebar.markdown("台灣大專院校學生人數統計")
 
 df=pd.read_csv('student.csv')  # 106-111 學年度
 
