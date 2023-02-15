@@ -22,14 +22,14 @@ df=pd.read_csv('student.csv')  # 106-111 學年度
 #Add sidebar to the app
 st.sidebar.markdown("台灣大專院校學生人數統計")
 #Select box   
-col1, col2 = st.columns(2)
+col1, col2 = st.sidebar.columns(2)
 with col1:
      year_list=df['year'].unique().tolist()
      year_list.sort(reverse=True)
-     n_year = st.selectbox("選擇年度", year_list, index=0)
+     n_year = st.sidebar.selectbox("選擇年度", year_list, index=0)
 
 with col2:
-     s_school = st.selectbox(
+     s_school = st.sidebar.selectbox(
                 "選擇學校", ['逢甲大學', '東海大學', '靜宜大學','國立中興大學','東吳大學','國立臺灣大學'] , index=0)
 # filter data    
 year=n_year
