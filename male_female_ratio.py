@@ -17,17 +17,26 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties #顯示中文字型
 myFont=FontProperties(fname='msj.ttf')
 
-#Add sidebar to the app
-st.sidebar.markdown("台灣大專院校學生人數統計")
-
 df=pd.read_csv('student.csv')  # 106-111 學年度
 
-year=111
-s_school='逢甲大學'
+#Add sidebar to the app
+st.sidebar.markdown("台灣大專院校學生人數統計")
+#Select box   
+col1, col2 = st.columns(2)
+with col1:
+     year_list=df['year'].unique().tolist()
+     year_list.sort(reverse=True)
+     n_year = st.selectbox("選擇年度", year_list, index=0)
 
+with col2:
+     s_school = st.selectbox(
+                "選擇學校", ['逢甲大學', '東海大學', '靜宜大學','國立中興大學','東吳大學','國立臺灣大學'] , index=0)
+# filter data    
+year=n_year
+s_school=s_school
 df_filterd = df[(df.year==year) & (df.school_name==s_school)] # all '111年度' records
 
-#--- data
+#--- prepare data
 girl=df_filterd.female.sum()
 boy=df_filterd.male.sum()
 labels = ['男生','女生']
