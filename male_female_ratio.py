@@ -17,6 +17,9 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties #顯示中文字型
 myFont=FontProperties(fname='msj.ttf')
 
+#Add sidebar to the app
+st.sidebar.markdown("Statistics of Student Number")
+
 df=pd.read_csv('student.csv')  # 106-111 學年度
 
 year=111
