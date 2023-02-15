@@ -10,7 +10,7 @@ Web App (by streamlit)
 => Male vs. Female ratio pie chart
  
 """
-
+import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -32,7 +32,7 @@ amounts=[]
 amounts.extend([boy, girl])
 
 #--- plot
-plt.figure(figsize=(8,6))  # set up size of figure
+fig = plt.figure(figsize=(8,6))  # set up size of figure
 plt.pie(
         amounts,
         labels = labels,
@@ -49,3 +49,4 @@ plt.legend(prop=myFont) # display legend
 plt.tight_layout()
 plt.show()
 
+st.pyplot(fig)
