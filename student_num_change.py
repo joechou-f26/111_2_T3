@@ -43,14 +43,14 @@ fig, ax1 = plt.subplots(figsize=(11,7))
 # first axes with unit 'person'
 ax1.bar(xpos, df1.total, label='學生人數') 
 ax1.set_xlabel('學年度',fontproperties=myFont)  
-ax1.set_ylabel('人數', color='tab:blue',fontproperties=myFont) 
+ax1.set_ylabel('人數', color='tab:blue',fontproperties=myFont, fontsize='large') 
 plt.title('{0}學生總人數趨勢 (106-111學年)'.format(s_school),fontproperties=myFont,fontsize='x-large')
 ax1.legend(loc="upper left",prop=myFont) 
 if b_pct_change:
     # second axes with unit 'change %'
     ax2 = ax1.twinx()  # Create a twin Axes sharing the xaxis
     ax2.plot(xpos, df1.total_pchg, 'or-', label='增減比例') 
-    ax2.set_ylabel('人數', color='tab:red',fontproperties=myFont, fonsize='large')  
+    ax2.set_ylabel('人數', color='tab:red',fontproperties=myFont, fontsize='large')  
     ax2.legend(loc="upper right",prop=myFont)  
 # plot new xticks and yticks of axis 1, axis 2
 plt.xticks(xpos, year, fontproperties=myFont)
