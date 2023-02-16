@@ -35,17 +35,20 @@ st.markdown(
 st.sidebar.text("台灣大專院校\n相關系所學生人數統計排行")
 # filter parameter  
 with st.sidebar:
+# 學年度
      year_list=df['year'].unique().tolist()
      year_list.sort(reverse=True)
      n_year = st.sidebar.selectbox("選擇年度", year_list, index=0)
-with st.sidebar:
+# 學制班別
      type_list=df['class_type'].unique().tolist()
      s_type = st.sidebar.selectbox('選擇學制班別', type_list, index=0)
-with st.sidebar:
+# 相關系所關鍵字
      s_dept = st.text_input('輸入相關系所關鍵字','行銷')
-with st.sidebar:
+# 排行前幾名
      n_top = st.slider('選擇排行前幾名',3, 30, 10)
-     
+# 顯示學生人數
+     b_show_num = st.radio('顯示學生人數', ('顯示', '不顯示'))
+    
 # filtering data    
 df_filtered = df[(df['year']==n_year) & 
                       (df['dept_name'].str.contains(s_dept)) & 
@@ -65,9 +68,10 @@ plt.yticks(yticks, fontproperties=myFont)
 plt.title('{0}學年度({1})台灣大專院校-{2}系(或{3}相關系)-{4}學生總人數 Top{5} 系所'.format(n_year, n_year+1911, s_dept, s_dept, s_type,n_top),fontproperties=myFont, fontsize='x-large')
 plt.xlabel('學生總人數',fontproperties=myFont)
 # 在 Bar 註明數量
-y_val=df1['total'].values.tolist()
-for i, v in enumerate(y_val):
-    plt.text(v, i, '{:,.0f}'.format(v), color='white', horizontalalignment='right', verticalalignment='center', fontsize=8)
+if b_show_num='顯示':
+    y_val=df1['total'].values.tolist()
+    for i, v in enumerate(y_val):
+        plt.text(v, i, '{:,.0f}'.format(v), color='white', horizontalalignment='right', verticalalignment='center', fontsize=8)
 plt.tight_layout()
 plt.show()
 
