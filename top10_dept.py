@@ -17,26 +17,22 @@ myFont=FontProperties(fname='msj.ttf')
 
 df=pd.read_csv('student.csv')  # 106-111 學年度
 
-#Add sidebar to the app
 st.sidebar.markdown("台灣大專院校各相關系所學生人數統計排行")
-#Select box   
+# filter parameter  
 #col1, col2, col3, col4 = st.sidebar.columns(4)
 with st.sidebar:
      year_list=df['year'].unique().tolist()
      year_list.sort(reverse=True)
      n_year = st.sidebar.selectbox("選擇年度", year_list, index=0)
-
 with st.sidebar:
      type_list=df['class_type'].unique().tolist()
      s_type = st.sidebar.selectbox('選擇學制班別', type_list, index=0)
-
 with st.sidebar:
      s_dept = st.text_input('輸入相關系所關鍵字','行銷')
-
 with st.sidebar:
      n_top = st.slider('選擇排行前幾名',3, 30, 10)
      
-# filter data    
+# filtering data    
 df_filtered = df[(df['year']==n_year) & 
                       (df['dept_name'].str.contains(s_dept)) & 
                       (df['class_type']==s_type)] 
