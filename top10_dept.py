@@ -18,17 +18,13 @@ myFont=FontProperties(fname='msj.ttf')
 df=pd.read_csv('student.csv')  # 106-111 學年度
 # set up sidebar margins
 
-st.markdown(
-            f'''
-            <style>
-                .reportview-container .sidebar-content {{
-                    padding-top: {1}rem;
-                }}
-                .reportview-container .main .block-container {{
-                    padding-top: {1}rem;
-                }}
-            </style>
-            ''',unsafe_allow_html=True)
+st.markdown("""
+  <style>
+    .css-1vq4p4l.e1fqkh3o4 {
+      margin-top: -75px;
+    }
+  </style>
+""", unsafe_allow_html=True)
 
 
 st.sidebar.text("台灣大專院校\n相關系所學生人數統計排行")
