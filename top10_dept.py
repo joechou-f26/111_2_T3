@@ -17,6 +17,7 @@ myFont=FontProperties(fname='msj.ttf')
 # load dataset
 df=pd.read_csv('student.csv')  # 106-111 學年度
 
+#--- set up style of the web page
 # set up sidebar top margins (unofficial CSS hack)
 st.markdown("""
   <style>
@@ -34,8 +35,9 @@ st.markdown("""
     }
   </style>
 """, unsafe_allow_html=True)
-
 st.sidebar.text("台灣大專院校\n相關系所學生人數統計排行")
+
+#--- data
 # filter parameter  
 with st.sidebar:
 # 學年度
@@ -51,14 +53,13 @@ with st.sidebar:
      n_top = st.slider('選擇排行前幾名',3, 30, 10)
 # 顯示學生人數
      b_show_num = st.radio('數字資訊', ('不顯示','學生人數', '人數排名'), index=0)
-    
 # filtering data    
 df_filtered = df[(df['year']==n_year) & 
                       (df['dept_name'].str.contains(s_dept)) & 
                       (df['class_type']==s_type)] 
 df1=df_filtered.groupby('school_name')['total'].sum().reset_index()
 df1=df1.sort_values(by='total',ascending=False).head(n_top)
-df1 = df1.iloc[::-1] #為了由大到小畫 barh, 反轉整個 df
+df1 = df1.iloc[::-1] # 為了由大到小畫 barh, 反轉整個 df
 
 #--- plot    
 fig=plt.figure(figsize=(12,8))  # set up size of figure
