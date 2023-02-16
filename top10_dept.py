@@ -32,7 +32,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-st.sidebar.markdown("台灣大專院校各相關系所學生人數統計排行")
+st.sidebar.markdown("台灣大專院校\n相關系所學生人數統計排行")
 # filter parameter  
 with st.sidebar:
      year_list=df['year'].unique().tolist()
