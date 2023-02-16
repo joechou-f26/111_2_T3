@@ -27,6 +27,8 @@ st.markdown(f'''
                 .reportview-container .css-1lcbmhc .css-1outpf7 {{
                 padding-top: 5px;
                 }}
+            </style>
+            '''
 )
 
 st.sidebar.text("台灣大專院校\n相關系所學生人數統計排行")
