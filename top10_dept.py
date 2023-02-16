@@ -68,7 +68,7 @@ plt.yticks(yticks, fontproperties=myFont)
 plt.title('{0}學年度({1})台灣大專院校-{2}系(或{3}相關系)-{4}學生總人數 Top{5} 系所'.format(n_year, n_year+1911, s_dept, s_dept, s_type,n_top),fontproperties=myFont, fontsize='x-large')
 plt.xlabel('學生總人數',fontproperties=myFont)
 # 在 Bar 註明數量
-if b_show_num='顯示':
+if b_show_num=='顯示':
     y_val=df1['total'].values.tolist()
     for i, v in enumerate(y_val):
         plt.text(v, i, '{:,.0f}'.format(v), color='white', horizontalalignment='right', verticalalignment='center', fontsize=8)
