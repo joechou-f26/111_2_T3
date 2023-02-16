@@ -17,9 +17,23 @@ myFont=FontProperties(fname='msj.ttf')
 
 df=pd.read_csv('student.csv')  # 106-111 學年度
 
+# set width of sidebar
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
+        width: 500px;
+    }
+    [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
+        width: 500px;
+        margin-left: -500px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 st.sidebar.markdown("台灣大專院校各相關系所學生人數統計排行")
 # filter parameter  
-#col1, col2, col3, col4 = st.sidebar.columns(4)
 with st.sidebar:
      year_list=df['year'].unique().tolist()
      year_list.sort(reverse=True)
