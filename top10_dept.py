@@ -16,8 +16,8 @@ from matplotlib.font_manager import FontProperties #顯示中文字型
 myFont=FontProperties(fname='msj.ttf')
 # load dataset
 df=pd.read_csv('student.csv')  # 106-111 學年度
-# set up sidebar margins
 
+# set up sidebar top margins (unofficial CSS hack)
 st.markdown("""
   <style>
     .css-1vq4p4l.e1fqkh3o4 {
@@ -26,6 +26,14 @@ st.markdown("""
   </style>
 """, unsafe_allow_html=True)
 
+# set up main content area top margins (unofficial CSS hack)
+st.markdown("""
+  <style>
+    .css-91z34k.egzxvld4 {
+      margin-top: -75px;
+    }
+  </style>
+""", unsafe_allow_html=True)
 
 st.sidebar.text("台灣大專院校\n相關系所學生人數統計排行")
 # filter parameter  
