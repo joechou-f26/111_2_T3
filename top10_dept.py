@@ -42,7 +42,6 @@ df1 = df1.iloc[::-1] #為了由大到小畫 barh, 反轉整個 df
 
 #--- plot    
 fig=plt.figure(figsize=(12,8))  # set up size of figure
-#plt.style.use('ggplot')
 plt.barh(df1.school_name, df1.total)
 # plot new xticks and yticks
 yticks=df1.school_name.unique()
