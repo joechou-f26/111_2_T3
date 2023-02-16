@@ -36,21 +36,7 @@ st.markdown(f'''
             </style>
             ''', unsafe_allow_html=True,
 )
-# set width of sidebar
-st.markdown(
-    """
-    <style>
-    [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-        width: 250px;
-    }
-    [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
-        width:250px;
-        margin-left: -250px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+
 st.sidebar.text("台灣大專院校\n相關系所學生人數統計排行")
 # filter parameter  
 with st.sidebar:
