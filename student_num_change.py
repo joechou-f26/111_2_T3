@@ -19,7 +19,7 @@ myFont=FontProperties(fname='msj.ttf')
 df=pd.read_csv('student.csv')  # 106-111 學年度
 
 #--- set up style of the web page
-st.sidebar.text("台灣大專院校學生人數統計排行")
+st.sidebar.text("台灣大專院校學生人數統計分析")
 
 #--- data
 # filter parameter  
