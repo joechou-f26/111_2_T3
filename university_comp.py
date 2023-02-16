@@ -20,14 +20,19 @@ myFont=FontProperties(fname='msj.ttf')
 # load dataset
 df=pd.read_csv('student.csv')  # 106-111 學年度
 
-options = st.multiselect('選擇想要比較的學校：',
-    ['逢甲大學', '東海大學', '靜宜大學','亞洲大學',
-     '僑光科技大學','嶺東科技大學','朝陽科技大學','中臺科技大學','弘光科技大學','修平學校財團法人修平科技大學',
-     '中國醫藥大學','中山醫學大學',
-     '國立中興大學','國立臺中教育大學','國立臺中科技大學','國立勤益科技大學','國立臺灣體育運動大學'])
+#--- set up style of the web page
+st.sidebar.text("台中地區的大學人數變化比較(101-111)")
+
+#--- data
+# filter parameter  
+with st.sidebar:
+    options = st.sidebar.multiselect('選擇想要比較的學校：',
+        ['逢甲大學', '東海大學', '靜宜大學','亞洲大學',
+         '僑光科技大學','嶺東科技大學','朝陽科技大學','中臺科技大學','弘光科技大學','修平學校財團法人修平科技大學',
+         '中國醫藥大學','中山醫學大學',
+        '國立中興大學','國立臺中教育大學','國立臺中科技大學','國立勤益科技大學','國立臺灣體育運動大學'])
 
 df1=df[df.school_name.isin(options)]
-
 df2=df1.groupby(['year','school_name'])['total'].sum().reset_index()
 schools=df2.sort_values(by='total', ascending=False)['school_name'].unique().tolist()
 
