@@ -48,7 +48,7 @@ yticks=df1.school_name.unique()
 plt.yticks(yticks, fontproperties=myFont)
 
 # plot title, x/y label, and annotation text
-plt.title('{0}學年度({1}/Sep-{2}/Jun)台灣大專院校-{3}系(或{4}相關系)-{5}學生總人數 Top{6} 系所'.format(n_year, n_year+1911, n_year+1912, s_dept, s_dept, s_type,n_top),fontproperties=myFont, fontsize='x-large')
+plt.title('{0}學年度({1})台灣大專院校-{2}系(或{3}相關系)-{4}學生總人數 Top{5} 系所'.format(n_year, n_year+1911, s_dept, s_dept, s_type,n_top),fontproperties=myFont, fontsize='x-large')
 plt.xlabel('學生總人數',fontproperties=myFont)
 # 在 Bar 註明數量
 y_val=df1['total'].values.tolist()
