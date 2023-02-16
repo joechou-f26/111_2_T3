@@ -34,7 +34,7 @@ with st.sidebar:
      s_dept = st.text_input('輸入相關系所關鍵字','行銷')
 
 with st.sidebar:
-     n_top = st.slider('選擇 Top N',5, 10, 15, 20)
+     n_top = st.slider('選擇排行前幾名',3, 20, 10)
      
 # filter data    
 df_filtered = df[(df['year']==n_year) & 
