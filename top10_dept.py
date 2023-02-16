@@ -50,7 +50,7 @@ with st.sidebar:
 # 排行前幾名
      n_top = st.slider('選擇排行前幾名',3, 30, 10)
 # 顯示學生人數
-     b_show_num = st.radio('數字資訊', ('學生人數', '人數排名'))
+     b_show_num = st.radio('數字資訊', ('不顯示','學生人數', '人數排名'), index=0)
     
 # filtering data    
 df_filtered = df[(df['year']==n_year) & 
