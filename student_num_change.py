@@ -44,7 +44,7 @@ fig, ax1 = plt.subplots(figsize=(11,7))
 ax1.bar(xpos, df1.total, label='學生人數') 
 ax1.set_xlabel('學年度',fontproperties=myFont)  
 ax1.set_ylabel('學生總人數', color='tab:blue',fontproperties=myFont, fontsize='large') 
-plt.title('{0}學生總人數趨勢 (106-111學年)'.format(s_school),fontproperties=myFont,fontsize='x-large')
+plt.title('{0}學生總人數增長趨勢'.format(s_school),fontproperties=myFont,fontsize='x-large')
 ax1.legend(loc="lower left",prop=myFont) 
 if b_pct_change:
     # second axes with unit 'change %'
