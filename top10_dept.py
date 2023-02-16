@@ -17,19 +17,19 @@ myFont=FontProperties(fname='msj.ttf')
 # load dataset
 df=pd.read_csv('student.csv')  # 106-111 學年度
 # set up sidebar margins
-padding_top = 0
-padding_bottom = 10
-padding_left = 1
-padding_right = 10
-# max_width_str = f'max-width: 100%;'
-st.sidebar.markdown(f'''
+
+st.markdown(
+            f'''
             <style>
-                .reportview-container .css-1lcbmhc .css-1outpf7 {{
-                padding-top: 5px;
+                .reportview-container .sidebar-content {{
+                    padding-top: {1}rem;
+                }}
+                .reportview-container .main .block-container {{
+                    padding-top: {1}rem;
                 }}
             </style>
-            '''
-)
+            ''',unsafe_allow_html=True)
+
 
 st.sidebar.text("台灣大專院校\n相關系所學生人數統計排行")
 # filter parameter  
