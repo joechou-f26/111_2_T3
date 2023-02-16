@@ -60,7 +60,7 @@ ax1.set_yticks(ylocs1)
 ax1.set_yticklabels(new_yticks1)
 if b_pct_change:
     ylocs2 = ax2.get_yticks() 
-    new_yticks2=['{0:,}%'.format(item) for item in ylocs2]
+    new_yticks2=['{0:.2f}%'.format(item*100) for item in ylocs2]
     ax2.set_yticks(ylocs2)
     ax2.set_yticklabels(new_yticks2)
 # 在 bar & line 上方註明數量
