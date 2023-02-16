@@ -26,7 +26,7 @@ st.sidebar.text("台灣大專院校學生人數統計排行")
 with st.sidebar:
 # 學年度
      school=df['school_name'].unique().tolist()
-     s_school = st.sidebar.selectbox("選擇學校：", school, index=0)
+     s_school = st.sidebar.selectbox("選擇學校：", school, index=59)
 # 學制班別
      b_pct_change = st.checkbox('顯示變化百分比%')
 # filtering data     
@@ -43,14 +43,14 @@ fig, ax1 = plt.subplots(figsize=(11,7))
 # first axes with unit 'person'
 ax1.bar(xpos, df1.total, label='學生人數') 
 ax1.set_xlabel('學年度',fontproperties=myFont)  
-ax1.set_ylabel('人數', color='tab:blue',fontproperties=myFont, fontsize='large') 
+ax1.set_ylabel('學生總人數', color='tab:blue',fontproperties=myFont, fontsize='large') 
 plt.title('{0}學生總人數趨勢 (106-111學年)'.format(s_school),fontproperties=myFont,fontsize='x-large')
 ax1.legend(loc="lower left",prop=myFont) 
 if b_pct_change:
     # second axes with unit 'change %'
     ax2 = ax1.twinx()  # Create a twin Axes sharing the xaxis
     ax2.plot(xpos, df1.total_pchg, 'or-', label='比例') 
-    ax2.set_ylabel('增減人數', color='tab:red',fontproperties=myFont, fontsize='large')  
+    ax2.set_ylabel('增減比例', color='tab:red',fontproperties=myFont, fontsize='large')  
     ax2.legend(loc="lower right",prop=myFont)  
 # plot new xticks and yticks of axis 1, axis 2
 plt.xticks(xpos, year, fontproperties=myFont)
