@@ -47,7 +47,7 @@ with st.sidebar:
 # 排行前幾名
      n_top = st.slider('選擇排行前幾名',3, 30, 10)
 # 顯示學生人數
-     b_show_num = st.radio('顯示學生人數', ('顯示', '不顯示'))
+     b_show_num = st.radio('數字資訊', ('學生人數', '人數排名'))
     
 # filtering data    
 df_filtered = df[(df['year']==n_year) & 
@@ -67,11 +67,14 @@ plt.yticks(yticks, fontproperties=myFont)
 # plot title, x/y label, and annotation text
 plt.title('{0}學年度({1})台灣大專院校-{2}系(或{3}相關系)-{4}學生總人數 Top{5} 系所'.format(n_year, n_year+1911, s_dept, s_dept, s_type,n_top),fontproperties=myFont, fontsize='x-large')
 plt.xlabel('學生總人數',fontproperties=myFont)
-# 在 Bar 註明數量
-if b_show_num=='顯示':
+# 在 Bar 註明學生人數 或 人數排名
+if b_show_num=='學生人數':
     y_val=df1['total'].values.tolist()
     for i, v in enumerate(y_val):
         plt.text(v, i, '{:,.0f}'.format(v), color='white', horizontalalignment='right', verticalalignment='center', fontsize=8)
+elif b_show_num=='人數排名':
+      for i, v in enumerate(y_val):
+        plt.text(v, i, '{:,.0f}'.format(i), color='yellow', horizontalalignment='right', verticalalignment='center', fontsize=10)  
 plt.tight_layout()
 plt.show()
 
