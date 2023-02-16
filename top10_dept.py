@@ -22,7 +22,7 @@ padding_bottom = 10
 padding_left = 1
 padding_right = 10
 # max_width_str = f'max-width: 100%;'
-st.markdown(f'''
+st.sidebar.markdown(f'''
             <style>
                 .reportview-container .css-1lcbmhc .css-1outpf7 {{
                 padding-top: 5px;
