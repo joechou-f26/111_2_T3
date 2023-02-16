@@ -34,7 +34,7 @@ with st.sidebar:
      s_dept = st.text_input('輸入相關系所關鍵字','行銷')
 
 with st.sidebar:
-     n_top = st.slider('選擇排行前幾名',3, 20, 10)
+     n_top = st.slider('選擇排行前幾名',3, 30, 10)
      
 # filter data    
 df_filtered = df[(df['year']==n_year) & 
@@ -45,7 +45,7 @@ df1=df1.sort_values(by='total',ascending=False).head(n_top)
 df1 = df1.iloc[::-1] #為了由大到小畫 barh, 反轉整個 df
 
 #--- plot    
-fig=plt.figure(figsize=(12,6))  # set up size of figure
+fig=plt.figure(figsize=(12,10))  # set up size of figure
 #plt.style.use('ggplot')
 plt.barh(df1.school_name, df1.total)
 # plot new xticks and yticks
