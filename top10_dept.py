@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties #顯示中文字型
-myFont=FontProperties(fname='/Users/joechou/Desktop/Python/fonts/msj.ttf')
+myFont=FontProperties(fname='msj.ttf')
 
 df=pd.read_csv('student.csv')  # 106-111 學年度
 
@@ -25,7 +25,6 @@ with col1:
      year_list=df['year'].unique().tolist()
      year_list.sort(reverse=True)
      n_year = st.sidebar.selectbox("選擇年度", year_list, index=0)
-
 
 with col2:
      type_list=df['class_type'].unique().tolist()
