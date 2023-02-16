@@ -75,7 +75,7 @@ plt.xlabel('學生總人數',fontproperties=myFont)
 if b_show_num=='學生人數':
     x_val=df1['total'].values.tolist()
     for i, v in enumerate(x_val):
-        plt.text(v, i, '{:,.0f}'.format(v), color='white', horizontalalignment='right', verticalalignment='center', fontsize=8)
+        plt.text(v, i, '{:,.0f}'.format(v), color='white', horizontalalignment='right', verticalalignment='center', fontsize=10)
 elif b_show_num=='人數排名':
      for i in range(n_top):
          plt.text(15, i, '{0}'.format(n_top-i), color='yellow', horizontalalignment='right', verticalalignment='center', fontsize=10) 
