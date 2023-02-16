@@ -24,17 +24,9 @@ padding_right = 10
 # max_width_str = f'max-width: 100%;'
 st.markdown(f'''
             <style>
-                .reportview-container .sidebar-content {{
-                    padding-top: {padding_top}rem;
+                .reportview-container .css-1lcbmhc .css-1outpf7 {{
+                padding-top: 5px;
                 }}
-                .reportview-container .main .block-container {{
-                    padding-top: {padding_top}rem;
-                    padding-right: {padding_right}rem;
-                    padding-left: {padding_left}rem;
-                    padding-bottom: {padding_bottom}rem;
-                }}
-            </style>
-            ''', unsafe_allow_html=True,
 )
 
 st.sidebar.text("台灣大專院校\n相關系所學生人數統計排行")
