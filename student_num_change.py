@@ -70,7 +70,7 @@ for i, v in enumerate(y_val):
 y_val=df1['total_pchg'].values.tolist()
 if b_pct_change:
     for i, v in enumerate(y_val):
-        ax2.text(i,v,  '{:,.0f}'.format(v), color='tag:red', horizontalalignment='right')
+        ax2.text(i,v,  '{:,.0f}'.format(v), color='tab:red', horizontalalignment='right')
 plt.show()
 
 st.pyplot(fig)
